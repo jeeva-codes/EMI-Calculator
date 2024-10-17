@@ -1,0 +1,405 @@
+:root{
+    --green-clr:rgb(70, 178, 70);
+    --red-clr:rgb(228, 59, 59);
+    --gray-clr:rgb(136, 134, 134);
+    --blue-clr:rgb(150, 211, 241);
+    --white-clr:#ffff;
+    --font-size:16px;
+    --font-weight:600
+    
+
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Fredoka', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.emi-container{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 600px;
+   position: relative;
+}
+/* ===================header title============ */
+.emi-header{
+   width: 100%;
+   display: flex;
+}
+.emi-header h2{
+    width: 75%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: .5px 2px 1px rgb(216, 123, 123);
+    color: rgb(243, 228, 146);
+    cursor: pointer;
+    margin-left: 10px;
+   
+}
+.emi-header h2:hover{
+  text-shadow: 1.5px 1px 1px rgb(236, 128, 128);
+}
+.emi-header label{
+    width: 100px;
+    height: 100px;
+}
+/* .emi-header svg{
+    width: 20%;
+   fill: #1989d4;
+    margin-left: 32px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+  
+} */
+.emi-header .info{
+    width: 70%;
+    height: auto;
+   text-align: center;
+  position: absolute;
+  right: 20%;
+  top: 12%;
+  border: 0.1px solid rgb(153, 151, 151);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 2;
+  background-color: var(--white-clr);
+}
+.info p{
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+.emi-header input{
+    display: none;
+}
+#info-icon{
+    color: #3498db;
+    font-size: 1.5em;
+     font-weight:var(--font-weight);
+}
+.hide{
+   display: none;
+}
+/* loan inputs */
+.emi-inputs{
+    width: 100%;
+    margin-top: 25px;
+}
+.loan-amt-input{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+    
+}
+.loan-amt-input label{
+    width: 40% ;
+    font-size: var(--font-size);
+    font-weight:600;
+    letter-spacing: 1px;
+}
+.loan-amt-input input{
+    width: 40%;
+    background: #3498db;
+    cursor:grab;
+
+}
+.loan-amt-input span{
+  width: 10%;
+  color: var(--green-clr);
+
+}
+.loan-amt-input span::before{
+    content: '₹';
+}
+/* ---------rate-interest-input---------- */
+
+.rate-interest-input{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 2rem;
+        margin-top: 10px;
+}
+.rate-interest-input label{
+    width: 40% ;
+    font-size: var(--font-size);
+    font-weight:600;
+    letter-spacing: 1px;
+}
+.rate-interest-input input{
+    width: 40%;
+    background: #3498db;
+    cursor:grab;
+    border: none;
+
+}
+.rate-interest-input span{
+  width: 10%;
+  color: var(--red-clr);
+
+}
+.rate-interest-input span::after{
+    content: '%';
+}
+/* --------------loan-period-input----------------- */
+.loan-period-input{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+}
+.loan-period-input label{
+width: 40% ;
+font-size: var(--font-size);
+font-weight:600;
+letter-spacing: 1px;
+}
+.loan-period-input input{
+width: 40%;
+background: #3498db;
+cursor:grab;
+
+}
+.loan-period-input span{
+width: 10%;
+color: var(--blue-clr);
+
+}
+.loan-period-input span::after{
+    content: 'yr';
+}
+/* btn */
+.calculate-btn{
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin-top: 30px;
+ 
+}
+.calculate-btn #showValues{
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform,opacity;
+    z-index: 0;
+
+}
+
+#showValues:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+#showValues:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+#showValues:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+#showValues:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+#showValues:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+#showValues:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+#showValues:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+#showValues:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+} 
+
+/* --------------------EMI display-------------- */
+.emi-display{
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 40px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+}
+.emi-display:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 45px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+.emi-display .dis{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+   margin-top: 8px;
+}
+.dis label{
+    width: 50%;
+    margin-left: 30px;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    letter-spacing: 1px;
+    color: var(--gray-clr);
+
+}
+.dis h3{
+    padding-left: 30%;
+    width: 50%;
+    font-weight: 500;  
+}
+.dis h3::before{
+    content: '₹';
+    margin-right: 6px;
+    color: #3c4043;
+}
+.dis1 h3{
+    color:var(--green-clr);
+   
+}
+.dis2 h3{
+    color:var(--green-clr) ;
+}
+.dis3 h3{
+    color:rgb(225, 109, 46) ;
+}
+.dis4 h3{
+    color:rgb(33, 194, 165) ;
+}
+/* ========================resposive media ============= */
+@media (max-width:624px) {
+/* loan amt input */
+    .loan-amt-input{
+        display: block;
+        height: auto;
+
+    }
+    
+    .loan-amt-input label{
+     width: 100%;
+     display: block;
+     text-align: center;
+    }
+    .loan-amt-input input{
+        width: 40%;
+        margin: auto;
+     display: block;
+   
+    }
+    .loan-amt-input span{
+        width: 40%;
+        margin: auto;
+     display: block;
+    
+    }
+
+    /* rate of interest */
+    .rate-interest-input{
+        display: block;
+        height: auto;
+
+    }
+    
+    .rate-interest-input label{
+     width: 100%;
+     display: block;
+     text-align: center;
+    }
+    .rate-interest-input input{
+        width: 40%;
+        margin: auto;
+     display: block;
+   
+    }
+    .rate-interest-input span{
+        width: 40%;
+        margin: auto;
+     display: block;
+    
+    }
+    /* loan periods */
+    .loan-period-input{
+        display: block;
+        height: auto;
+
+    }
+    
+    .loan-period-input label{
+     width: 100%;
+     display: block;
+     text-align: center;
+    }
+    .loan-period-input input{
+        width: 40%;
+        margin: auto;
+     display: block;
+   
+    }
+    .loan-period-input span{
+        width: 40%;
+        margin: auto;
+     display: block;
+    
+    }
+    /* =============emi display====== */
+    .dis h3{
+        padding-left: 5%;
+    }
+}
+
+
+
+
+

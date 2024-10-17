@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="emi-container">
+        <div class="emi-header">
+            <h2>EMI Calculator</h2>
+            <div class="info hide">
+                <p>
+                    This project is designed to help users calculate EMI (Equated Monthly Installment) interest effectively. 👍</p>
+                <p>The formula used in the project is <br> P x R x (1+R)^N / [(1+R)^N-1] </p>    
+            </div>
+            <label for="showinfo">
+            <span id="info-icon">?</span>   
+        </label>
+       <input type="checkbox" id="showinfo">
+        </div>
+        <div class="emi-inputs">
+            <div class="loan-amt-input">
+                 <label for="" id="input-label">Loan Amount</label>
+                <input type="range" name="p" min="10000" max="100000" id="range1" class="user-input" step="100">
+                <span id="value1">0</span></div>
+            <div class="rate-interest-input">
+                <label for="" id="input-label" > Rate of interst (p.a)</label>
+                <input type="range" name="p" min="0" max="30" id="range2"  class="user-input" step=".1">
+                <span id="value2"></span></div>
+            <div class="loan-period-input">
+                <label for="" id="input-label" >loan tenure(years)</label>
+                <input type="range"  type="range" name="p" min="1" max="30" id="range3"  class="user-input" step="1">
+                <span id="value3"></span>
+            </div>
+           <div class="calculate-btn">
+            <button id="showValues">Calculate</button>
+           </div>            
+        </div>
+        <div class="emi-display">
+            <div class="dis dis1">
+                <label for="">Monthly EMI</label><h3 id="Monthly-emi"></h3>
+
+            </div>
+            <div class="dis dis2">
+                <label for="">Principal Amount</label><h3 id="Principal-amount"></h3>
+
+            </div>
+            <div class="dis dis3">
+                <label for="">Total interest</label><h3 id="Total-interest"></h3>
+
+            </div>
+            <div class="dis dis4 " >
+                <label for="">Total Amount</label><h3 id="Total-amount"></h3>
+
+            </div>
+        </div>
+    </div>
+
+
+ <script src="index.js"></script>   
+</body>
+</html>
